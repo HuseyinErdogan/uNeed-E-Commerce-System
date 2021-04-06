@@ -1,0 +1,37 @@
+﻿@using uNeed.Models.Entity
+@model List<Category>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<table class="table table-bordered table-success" >
+    <tr>
+        <th>Category ID</th>
+        <th>Category Name</th>
+        <th>Category Description</th>
+        <th>Delete</th>
+        <th>Update</th>
+    </tr>
+    <tbody>
+        @foreach(var cat in Model)
+        {
+        <tr>
+            <th>
+                @cat.CategoryID
+            </th>
+            <td>
+                @cat.CategoryName
+            </td>
+            <td>
+                @cat.Description
+            </td>
+            <td> <a href="/admin/deletecategory/@cat.CategoryID" class="btn btn-danger"> DELETE </a></td>
+            <td> <a href="/admin/getcategory/@cat.CategoryID" class="btn btn-info"> UPDATE </a></td>
+        </tr>
+        }
+    </tbody>
+</table>
+<a href="/admin/newcategory" class="btn btn-success"> ADD NEW CATEGORY </a>
+
+

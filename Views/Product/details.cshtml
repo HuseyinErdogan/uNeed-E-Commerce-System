@@ -1,0 +1,99 @@
+﻿@using uNeed.Models.Entity
+@model Product
+
+<link href="~/wwwroot/css/bootstrap.min.css" rel="stylesheet">
+<link href="~/wwwroot/css/font-awesome.min.css" rel="stylesheet">
+<link href="~/wwwroot/css/prettyPhoto.css" rel="stylesheet">
+<link href="~/wwwroot/css/price-range.css" rel="stylesheet">
+<link href="~/wwwroot/css/animate.css" rel="stylesheet">
+<link href="~/wwwroot/css/main.css" rel="stylesheet">
+<link href="~/wwwroot/css/responsive.css" rel="stylesheet">
+<!--[if lt IE 9]>
+<script src="js/html5shiv.js"></script>
+<script src="js/respond.min.js"></script>
+<![endif]-->
+<link rel="shortcut icon" href="images/ico/favicon.ico">
+<link rel="apple-touch-icon-precomposed" sizes="144x144" href="~/wwwroot/images/ico/apple-touch-icon-144-precomposed.png">
+<link rel="apple-touch-icon-precomposed" sizes="114x114" href="~/wwwroot/images/ico/apple-touch-icon-114-precomposed.png">
+<link rel="apple-touch-icon-precomposed" sizes="72x72" href="~/wwwroot/images/ico/apple-touch-icon-72-precomposed.png">
+<link rel="apple-touch-icon-precomposed" href="~/wwwroot/images/ico/apple-touch-icon-57-precomposed.png">
+<div class="col-sm-12 padding-right">
+    <div class="product-details">
+        <!--product-details-->
+        <div class="col-sm-4" style="margin-left:5% ">
+            <div class="view-product">
+                <img src="~/wwwroot/images/home/@Model.Picture" class="newarrival" alt="" />
+                <h3>ZOOM</h3>
+            </div>
+            
+
+        </div>
+        <div class="col-sm-7 border" style="border-color:orangered;">
+            <div class="product-information">
+                <!--/product-information-->
+                
+                <h2>@Model.ProductName</h2>
+                <p>@Model.ProductDescription</p>
+                <img src="~/wwwroot/images/product-details/rating.png" alt="" />
+                <span>
+                    <span>@Model.Price €</span>
+                    
+                    <a href="/product/addToCart" type="button" class="btn btn-fefault cart">
+                        <i class="fa fa-shopping-cart"></i>
+                        Add to cart
+                    </a>
+                </span>
+                <p><b>Availability:</b> @Model.ProductAvailable </p>
+                <p><b>Color:</b> @Model.Color</p>
+                <p><b>Size:</b> @Model.Size</p>
+                <a href=""><img src="~/wwwroot/images/product-details/share.png" class="share img-responsive" alt="" /></a>
+            </div><!--/product-information-->
+            <div id="similar-product" class="carousel slide col-7" data-ride="carousel">
+
+                <!-- Wrapper for slides -->
+                <div class="carousel-inner">
+                    <div class="item active" style="height:75px">
+                        @foreach (var item in (List<Product>)ViewBag.proc)
+                        {
+                            <a href="/product/details/@item.ProductID"><img src="~/wwwroot/images/home/@item.Picture" alt="" style="width:50px"></a>
+                        }
+
+                    </div>
+                    <div class="item" style="height:75px">
+                        @foreach (var item in (List<Product>)ViewBag.proc)
+                        {
+                            <a href="/product/details/@item.ProductID"><img src="~/wwwroot/images/home/@item.Picture" alt="" style="width:50px"></a>
+                        }
+                    </div>
+                    <div class="item" style="height:75px">
+                        @foreach (var item in (List<Product>)ViewBag.proc)
+                        {
+                            <a href="/product/details/@item.ProductID"><img src="~/wwwroot/images/home/@item.Picture" alt="" style="width:50px"></a>
+                        }
+                    </div>
+
+
+                </div>
+
+                <!-- Controls -->
+                <a class="left item-control" href="#similar-product" data-slide="prev">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                <a class="right item-control" href="#similar-product" data-slide="next">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+            </div>
+        </div>
+
+    </div><!--/product-details-->
+
+   
+
+</div>
+
+<script src="~/wwwroot/js/jquery.js"></script>
+<script src="~/wwwroot/js/price-range.js"></script>
+<script src="~/wwwroot/js/jquery.scrollUp.min.js"></script>
+<script src="~/wwwroot/js/bootstrap.min.js"></script>
+<script src="~/wwwroot/js/jquery.prettyPhoto.js"></script>
+<script src="~/wwwroot/js/main.js"></script>

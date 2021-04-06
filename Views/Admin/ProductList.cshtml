@@ -1,0 +1,72 @@
+﻿@using uNeed.Models.Entity
+@model List<Product>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+
+<table class="table table-bordered table-success">
+    <tr>
+        <th>Product ID</th>
+        <th>Product Name</th>
+        <th>Product Description</th>
+        <th>Product Available</th>
+        <th>Size</th>
+        <th>Color</th>
+        <th>Price</th>
+        <th>Stock</th>
+        <th>Categories</th>
+        <th>Picture</th>
+        <th>Delete</th>
+        <th>Update</th>
+    </tr>
+    <tbody>
+        @foreach (var proc in Model)
+        {
+        <tr>
+            <th>
+                @proc.ProductID
+            </th>
+            <td>
+                @proc.ProductName
+            </td>
+            <td>
+                @proc.ProductDescription
+            </td>
+            <td>
+                @proc.ProductAvailable
+            </td>
+            <td>
+                @proc.Size
+            </td>
+            <td>
+                @proc.Color
+            </td>
+            <td>
+                @proc.Price €
+            </td>
+            <td>
+                @proc.Stock
+            </td>
+            <td>
+                @foreach (var ss in proc.Category.ToList())
+                {
+                     <span>-</span>
+                    @ss.CategoryName; 
+                }
+               
+            </td>
+            <td>
+                <img src="~/wwwroot/images/home/@proc.Picture" width="80"/>
+                
+            </td>
+            <td> <a href="/admin/deleteproduct/@proc.ProductID" class="btn btn-danger"> DELETE </a></td>
+            <td> <a href="/admin/getproduct/@proc.ProductID" class="btn btn-info"> UPDATE </a></td>
+
+        </tr>
+        }
+    </tbody>
+</table>
+
+<a href="/admin/newproduct" class="btn btn-success"> ADD NEW PRODUCT </a>

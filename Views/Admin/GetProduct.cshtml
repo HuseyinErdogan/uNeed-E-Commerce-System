@@ -1,0 +1,62 @@
+﻿@using uNeed.Models.Entity
+@model Product
+@{
+    ViewBag.Title = "GetProduct";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+<div class="container">
+    @using (Html.BeginForm("UpdateProduct", "Admin", FormMethod.Post))
+    {
+        <div class="form-group">
+            @Html.LabelFor(m => m.ProductID)
+            @Html.TextBoxFor(m => m.ProductID, new { @class = "form-control" })
+            <br />
+            @Html.LabelFor(m => m.ProductName)
+            @Html.TextBoxFor(m => m.ProductName, new { @class = "form-control" })
+            <br />
+            @Html.LabelFor(m => m.ProductDescription)
+            @Html.TextBoxFor(m => m.ProductDescription, new { @class = "form-control" })
+            <br />
+            @Html.LabelFor(m => m.Size)
+            @Html.TextBoxFor(m => m.Size, new { @class = "form-control" })
+            <br />
+            @Html.LabelFor(m => m.Color)
+            @Html.TextBoxFor(m => m.Color, new { @class = "form-control" })
+            <br />
+            @Html.LabelFor(m => m.Price)
+            @Html.TextBoxFor(m => m.Price, new { @class = "form-control" })
+            <br />
+            @Html.LabelFor(m => m.Stock)
+            @Html.TextBoxFor(m => m.Stock, new { @class = "form-control" })
+            <br />
+            @Html.LabelFor(m => m.Ranking)
+            @Html.TextBoxFor(m => m.Ranking, new { @class = "form-control" })
+            <br />
+            @Html.LabelFor(m => m.Picture)
+            @Html.TextBoxFor(m => m.Picture, new { @class = "form-control" })
+            <br />
+            <div>
+
+                <select title="Select Categories" class="selectpicker" multiple data-live-search="true" name="categories[]" id="categories[]">
+
+                    @foreach (var el in (List<Category>)ViewBag.cats)
+                    {
+                        <option value="@el.CategoryID">@el.CategoryName</option>
+                    }
+
+                </select>
+
+            </div>
+
+
+        </div>
+        <div>
+            <button class="btn btn-info">
+                UPDATE Product
+            </button>
+        </div>
+    }
+
+</div>
+
+

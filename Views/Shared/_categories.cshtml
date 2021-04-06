@@ -1,0 +1,16 @@
+﻿@using uNeed.Models.Entity
+@model List<Category>
+   @{
+       var cats = @Model;
+}
+
+
+    @foreach (var category in cats)
+    {
+       
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h4 class="panel-title"><a href="/product/list/@category.CategoryID">@category.CategoryName</a></h4>
+            </div>
+        </div>
+    }

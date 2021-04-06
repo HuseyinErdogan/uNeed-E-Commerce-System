@@ -1,0 +1,55 @@
+﻿@using uNeed.Models.Entity
+@model List<Customer>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<table class="table table-bordered table-success">
+    <tr>
+        <th>Customer ID</th>
+        <th>Name</th>
+        <th>LastName</th>
+        <th>Password</th>
+        <th>E-Mail</th>
+        <th>Phone</th>
+        <th>Address 1</th>
+        <th>Address 2</th>
+        <th>Delete</th>
+        <th>Update</th>
+    </tr>
+    <tbody>
+        @foreach (var customer in Model)
+        {
+            <tr>
+                <th>
+                    @customer.CustomerID
+                </th>
+                <td>
+                    @customer.FirstName
+                </td>
+                <td>
+                    @customer.LastName
+                </td>
+                <td>
+                    @customer.Password
+                </td>
+                <td>
+                    @customer.E_Mail
+                </td>
+                <td>
+                    @customer.Phone
+                </td>
+                <td>
+                    @customer.Address1
+                </td>
+                <td>
+                    @customer.Address2
+                </td>
+                <td> <a href="/admin/deletecustomer/@customer.CustomerID" class="btn btn-danger"> DELETE </a></td>
+                <td> <a href="/admin/getcustomer/@customer.CustomerID" class="btn btn-info"> UPDATE </a></td>
+
+            </tr>
+        }
+    </tbody>
+</table>

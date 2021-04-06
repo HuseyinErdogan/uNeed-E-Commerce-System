@@ -1,0 +1,28 @@
+﻿@model uNeed.Models.Entity.Shipper
+@{
+    ViewBag.Title = "GetShipper";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+<div class="container">
+    @using (Html.BeginForm("UpdateShipper", "Admin", FormMethod.Post))
+    {
+        <div class="form-group">
+            @Html.LabelFor(m => m.ShipperID)
+            @Html.TextBoxFor(m => m.ShipperID, new { @class = "form-control" })
+            <br />
+            @Html.LabelFor(m => m.CompanyName)
+            @Html.TextBoxFor(m => m.CompanyName, new { @class = "form-control" })
+            <br />
+            @Html.LabelFor(m => m.Phone)
+            @Html.TextBoxFor(m => m.Phone, new { @class = "form-control" })
+        </div>
+        <div>
+            <button class="btn btn-info">
+                UPDATE Shipper
+            </button>
+        </div>
+    }
+
+</div>
+
+

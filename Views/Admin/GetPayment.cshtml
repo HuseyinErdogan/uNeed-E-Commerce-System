@@ -1,0 +1,28 @@
+﻿@model uNeed.Models.Entity.Payment
+@{
+    ViewBag.Title = "GetPayment";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+<div class="container">
+    @using (Html.BeginForm("UpdatePayment", "Admin", FormMethod.Post))
+    {
+        <div class="form-group">
+            @Html.LabelFor(m => m.PaymentID)
+            @Html.TextBoxFor(m => m.PaymentID, new { @class = "form-control" })
+            <br />
+            @Html.LabelFor(m => m.PaymentType)
+            @Html.TextBoxFor(m => m.PaymentType, new { @class = "form-control" })
+            <br />
+            @Html.LabelFor(m => m.Allowed)
+            @Html.TextBoxFor(m => m.Allowed, new { @class = "form-control" })
+        </div>
+        <div>
+            <button class="btn btn-info">
+                UPDATE Payment
+            </button>
+        </div>
+    }
+
+</div>
+
+

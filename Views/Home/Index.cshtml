@@ -1,0 +1,12 @@
+﻿@using uNeed.Models.Entity
+@using uNeed.ViewModels
+@model ProductViewModel
+@{
+    var pros = @Model.pros;
+    var cats = @Model.cats;
+}
+
+
+@Html.Partial("_carousel")
+
+@Html.Partial("_products", Model)

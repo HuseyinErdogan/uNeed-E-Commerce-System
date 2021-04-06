@@ -1,0 +1,55 @@
+﻿@using uNeed.Models.Entity
+@{ 
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+@model List<Category>
+
+@using (Html.BeginForm("NewProduct", "Admin", FormMethod.Post))
+{
+    <div>
+        <label>Product Name</label>
+        <input type="text" name="ProductName" class="form-control" />
+        <label>Product Description</label>
+        <input type="text" name="ProductDescription" class="form-control" />
+        <label>Product Available</label>
+        <input type="text" name="ProductAvailable" class="form-control" />
+        <label>Size</label>
+        <input type="text" name="Size" class="form-control" />
+        <label>Color</label>
+        <input type="text" name="Color" class="form-control" />
+        <label>Price</label>
+        <input type="text" name="Price" class="form-control" />
+        <label>Stock</label>
+        <input type="text" name="Stock" class="form-control" />
+        <label>Ranking</label>
+        <input type="text" name="Ranking" class="form-control" />
+        <label>Picture URL</label>
+        <input type="text" name="Picture" class="form-control" />
+        <div>
+            @*<label>Categories</label>
+        @Html.DropDownListFor(m => m.CategoryName, (List<SelectListItem>)ViewBag.vl, new { @class = "form-control" })*@
+
+            
+                <select class="selectpicker" multiple data-live-search="true" name="categories[]" id="categories" title="Select Categories">
+
+                    @foreach (var el in Model)
+                    {
+                        <option value="@el.CategoryID">@el.CategoryName</option>
+                    }
+
+                </select>
+                
+       
+           
+
+
+        </div>
+
+
+    </div>
+    <div class="mt-2">
+        <button class="btn btn-success">Add Product</button>
+    </div>
+
+}
+

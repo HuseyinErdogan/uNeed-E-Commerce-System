@@ -1,0 +1,46 @@
+﻿@using uNeed.Models.Entity
+@model Customer
+@{
+    ViewBag.Title = "GetCustomer";
+}
+
+<div class="container">
+    @using (Html.BeginForm("Update", "Customer", FormMethod.Post))
+    {
+    <div class="form-group">
+
+        <select class="form-control invisible" style="border:none" name="CustomerID">
+            <option value="@Model.CustomerID"> </option>
+        </select>
+        @Html.LabelFor(m => m.FirstName)
+        @Html.TextBoxFor(m => m.FirstName, new { @class = "form-control" })
+        <br />
+        @Html.LabelFor(m => m.LastName)
+        @Html.TextBoxFor(m => m.LastName, new { @class = "form-control" })
+        <br />
+        @Html.LabelFor(m => m.Password)
+        @Html.TextBoxFor(m => m.Password, new { @class = "form-control" })
+        <br />
+        @Html.LabelFor(m => m.E_Mail)
+        @Html.TextBoxFor(m => m.E_Mail, new { @class = "form-control" })
+        <br />
+        @Html.LabelFor(m => m.Phone)
+        @Html.TextBoxFor(m => m.Phone, new { @class = "form-control" })
+        <br />
+        @Html.LabelFor(m => m.PostalCode)
+        @Html.TextBoxFor(m => m.PostalCode, new { @class = "form-control" })
+        <br />
+        @Html.LabelFor(m => m.Address1)
+        @Html.TextBoxFor(m => m.Address1, new { @class = "form-control" })
+        <br />
+        @Html.LabelFor(m => m.Address2)
+        @Html.TextBoxFor(m => m.Address2, new { @class = "form-control" })
+    </div>
+        <div>
+            <button class="btn btn-info">
+                UPDATE Customer
+            </button>
+        </div>
+    }
+
+</div>

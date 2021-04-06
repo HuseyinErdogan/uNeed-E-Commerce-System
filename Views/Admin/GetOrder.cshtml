@@ -1,0 +1,37 @@
+﻿@model uNeed.Models.Entity.Order
+@{
+    ViewBag.Title = "GetOrder";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+<div class="container">
+    @using (Html.BeginForm("UpdateOrder", "Admin", FormMethod.Post))
+    {
+    <div class="form-group">
+        @Html.LabelFor(m => m.OrderID)
+        @Html.TextBoxFor(m => m.OrderID, new { @class = "form-control" })
+        <br />
+        @Html.LabelFor(m => m.CustomerID)
+        @Html.TextBoxFor(m => m.CustomerID, new { @class = "form-control" })
+        <br />
+        @Html.LabelFor(m => m.OrderDate)
+        @Html.TextBoxFor(m => m.OrderDate, new { @class = "form-control" })
+        <br />
+        @Html.LabelFor(m => m.Paid)
+        @Html.TextBoxFor(m => m.Paid, new { @class = "form-control" })
+        <br />
+        @Html.LabelFor(m => m.PaymentID)
+        @Html.TextBoxFor(m => m.PaymentID, new { @class = "form-control" })
+        <br />
+        @Html.LabelFor(m => m.ShipperID)
+        @Html.TextBoxFor(m => m.ShipperID, new { @class = "form-control" })
+    </div>
+        <div>
+            <button class="btn btn-info">
+                UPDATE Order
+            </button>
+        </div>
+    }
+
+</div>
+
+

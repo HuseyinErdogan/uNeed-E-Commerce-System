@@ -1,0 +1,65 @@
+﻿
+
+@Styles.Render("~/wwwroot/css/styleNavbar.css")
+<link rel="stylesheet" href="~/wwwroot/css/styleNavbar.css" />
+
+<!--NAVBAR STARTS-->
+<nav class="clearfix mb-2">
+
+    <!--NAVBAR FIRST LINE BEGINS-->
+    <div class="topbar" style=" background-color: #27324A">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-2 col-md-2 col-12 ">
+                    <div class="logo">
+                        <a href="/">
+                            <img src="~/wwwroot/images/home/logo3.png" alt="logo" style="width:120%; padding-bottom:15px" >
+                        </a>
+                    </div>
+                </div>
+                <div class="col-lg-8 col-md-7 col-12 ">
+                    <div class="search-bar-top"   >
+                        <div class="search-bar">    
+                            
+                                
+                           
+                            <form action="/product/list" class="form-inline" >
+                                <input name="q" placeholder="Search Product Here..." type="text" style="background-color:white">
+
+                                <button  class="btnn" type="submit">
+                                    <i class="fas fa-search fa-lg"></i>
+                                </button>
+                            </form>
+
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-2 col-md-3 col-12 ">
+                    <div id="right-icons" >
+                       
+                        <div class="single-bar">
+                            <a href="/customer/profile" class="single-icon">
+                                <i class="fa fa-user-circle-o fa-3x"
+                                   aria-hidden="true" style="color:white"></i>
+                            </a>
+                        </div>
+                        <div class="single-bar shopping">
+                            <a href="/product/basket" class="single-icon">
+                                <i class="fas fa-shopping-cart fa-3x"  style="color:white"></i> <span class="total-count"></span>
+                            </a>
+                        </div>
+                        <div class="single-bar">
+                            <a href="/Security/logout" class="single-icon">
+                                <i class="fas fa-sign-out-alt fa-3x"  style="color:white"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--NAVBAR FIRST LINE FINISHES-->
+    <!--NAVBAR SECOND(CATEGORY) LINE BEGINS-->
+
+
+</nav>

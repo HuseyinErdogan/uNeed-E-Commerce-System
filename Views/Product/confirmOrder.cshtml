@@ -1,0 +1,99 @@
+﻿@using uNeed.Models.Entity
+@using uNeed.ViewModels
+@model OrderViewModel
+@{
+    var pays = Model.pays;
+    var ships = Model.ships;
+    var prods = Model.prods;
+    var total = Model.total;
+    var cust = Model.cust;
+}
+
+<div class="container mb-4">
+    @using (Html.BeginForm("addOrder", "Product", FormMethod.Post))
+    {
+        <div class="row">
+            <div class="col-12">
+                <div class="table-responsive">
+                    <table class="table table-striped">
+                        <thead>
+                            <tr>
+                                <th scope="col"> </th>
+                                <th scope="col">Product</th>
+                                <th scope="col">Available</th>
+                                <th scope="col" class="text-center">Quantity</th>
+                                <th scope="col" class="text-right">Unit Price</th>
+                                <th> </th>
+                            </tr>
+                        </thead>
+                        <tbody>
+
+                            @foreach (var el in prods)
+                            {
+                                <tr>
+                                    <td><div><img src="~/wwwroot/images/home/@el.Product.Picture" style="width:50px; height:50px" /></div> </td>
+                                    <td>@el.Product.ProductName</td>
+                                    <td>In stock</td>
+                                    <td class="text-center">@el.Quantity</td>
+                                    <td class="text-right">@el.Product.Price €</td>
+                                    <td></td>
+                                </tr>
+
+                            }
+                            <tr>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td class="text-right"><strong style="font-size:medium" class="text-right">Total Price: <label class="text-right label label-success" style="font-size:medium">@Model.total €</label></strong></td>
+
+                            </tr>
+
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <div class="col-12">
+                <div class="row">
+                    <div class="col-6">
+                        <div class="form-group">
+                            <label for="exampleFormControlSelect1">Choose Shipper Company</label>
+                            <select class="form-control" name="ShipperID" id="exampleFormControlSelect1">
+                                @foreach (var item in ships)
+                                {
+                                    <option value="@item.ShipperID">@item.CompanyName</option>
+                                }
+                            </select>
+                        </div>
+                    </div>
+                    <div class="col-6">
+                        <div class="form-group">
+                            <label for="exampleFormControlSelect3">Choose Payment Type</label>
+                            <select class="form-control" name="PaymentID" id="exampleFormControlSelect1">
+                                @foreach (var item in pays)
+                                {
+                                    <option value="@item.PaymentID">@item.PaymentType</option>
+                                }
+                            </select>
+                        </div>
+                        
+                        <select class="form-control invisible" style="border:none" name="CustomerID" id="exampleFormControlSelect1">
+
+                                <option value="@cust"> </option>
+
+                        </select>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-12 mb-2">
+
+                <button class="btn btn-lg btn-block btn-success text-uppercase">Place Order</button>
+
+            </div>
+        </div>
+    }
+</div>
+

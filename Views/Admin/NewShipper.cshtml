@@ -1,0 +1,22 @@
+﻿@model uNeed.Models.Entity.Shipper
+@{
+    ViewBag.Title = "NewShipper";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+
+<form method="post" class="form-group">
+    <div>
+        <label>Company Name</label>
+        @Html.TextBoxFor(m => m.CompanyName, new { @class = "form-control" })
+        @Html.ValidationMessageFor(m => m.CompanyName, "", new { @style = "color:Red" })
+        <hr />
+        <label>Company Phone</label>
+        <input type="text" name="Phone" class="form-control" />
+    </div>
+    <div class="mt-2">
+        <button class="btn btn-success">Add Shipper</button>
+    </div>
+
+</form>
+

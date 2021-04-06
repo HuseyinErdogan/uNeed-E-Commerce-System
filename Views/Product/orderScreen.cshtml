@@ -1,0 +1,86 @@
+﻿@using uNeed.Models.Entity
+@model List<OrderDetailView>
+
+
+
+
+
+<div class="container mb-4">
+    <div class="row">
+        <div class="col-12">
+            <div class="table-responsive">
+                <table class="table table-striped">
+                    <thead>
+                        <tr>
+                            <th scope="col">Order ID</th>
+                            <th scope="col">Total Price</th>
+                            <th scope="col">Shipper Company</th>
+                            <th scope="col">Payment Type</th>
+                            <th scope="col">Order Detail</th>
+
+                        </tr>
+                    </thead>
+                    <tbody>
+
+
+                        <tr>
+
+                            @foreach (var item in Model)
+                            {
+                                <td> @item.OrderID</td>
+                                <td> @item.Paid €</td>
+                                <td> @item.CompanyName</td>
+                                <td> @item.PaymentType</td>
+
+                                break;
+                            }
+                            <td>
+                                <table bordercolor=black>
+                                    <thead>
+                                        <tr>
+                                            <th>Product Name</th>
+                                            <th>Price</th>
+                                            <th>Quantity</th>
+                                            <th>Picture</th>
+
+                                        </tr>
+                                    </thead>
+
+                                    <tbody>
+                                        @foreach (var item in Model)
+                                        {
+
+                                            <tr>
+                                                <td>
+                                                    @item.ProductName
+                                                </td>
+                                                <td>
+                                                    @item.Price €
+                                                </td>
+                                                <td>
+                                                    @item.Quantity
+                                                </td>
+                                                <td>
+                                                    <div><img src="~/wwwroot/images/home/@item.Picture" style="width:50px; height:50px" /></div>
+                                                </td>
+                                            </tr>
+                                        }
+                                    </tbody>
+                                </table>
+                            </td>
+                        </tr>
+
+
+
+
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+    </div>
+    <div class="col">
+        <a href="/product/list" class="btn btn-block btn-light">Continue Shopping</a>
+    </div>
+</div>
+

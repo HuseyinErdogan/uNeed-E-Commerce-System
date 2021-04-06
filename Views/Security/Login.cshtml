@@ -1,0 +1,85 @@
+﻿@{ 
+    Layout = null;
+}
+
+
+<!DOCTYPE html>
+<html lang="zxx">
+
+<head>
+    <title>Working Signin form Responsive Widget Template :: W3layouts</title>
+    <!-- Meta tag Keywords -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="UTF-8" />
+    <meta name="keywords"
+          content="Working Signin form Responsive web template, Bootstrap Web Templates, Flat Web Templates, Android Compatible web template, Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyEricsson, Motorola web design" />
+    <!-- //Meta tag Keywords -->
+    <link href="//fonts.googleapis.com/css2?family=Karla:wght@400;700&display=swap" rel="stylesheet">
+    <!--/Style-CSS -->
+    <link rel="stylesheet" href="~/wwwroot/css/style2.css" type="text/css" media="all" />
+    <!--//Style-CSS -->
+</head>
+
+<body>
+
+    <!-- form section start -->
+    <section class="w3l-workinghny-form">
+        <!-- /form -->
+        <div class="workinghny-form-grid">
+            <div class="wrapper">
+                <div class="logo">
+                    <h1 style=" color: #212529">uNeed Sign In</h1>
+                    <!-- if logo is image enable this
+                        <a class="brand-logo" href="#index.html">
+                            <img src="image-path" alt="Your logo" title="Your logo" style="height:35px;" />
+                        </a> -->
+                </div>
+                <div class="workinghny-block-grid">
+                    <div class="workinghny-left-img align-end">
+                        <img src="~/wwwroot/images/home/2.png" class="img-responsive" alt="img" />
+                    </div>
+                    <div class="form-right-inf">
+
+                        <div class="login-form-content">
+                           
+                            @using (Html.BeginForm("Login", "Security", FormMethod.Post))
+                            {
+                        <div class="one-frm">
+
+                            <label>E-MAIL</label>
+                            <input type="text" name="E_Mail" placeholder="" required="">
+                        </div>
+                            <div class="one-frm">
+                                <label>PASSWORD</label>
+                                <input type="password" name="Password" placeholder="" required="">
+                            </div>
+                            <label class="check-remaind">
+                                <input type="checkbox">
+                                <span class="checkmark"></span>
+                                <p class="remember">Remember Me</p>
+
+                            </label>
+                            <button class="btn btn-style mt-3">Sign In </button>
+                            <p class="already">Don't have an account? <a href="/Security/Signup">Sign Up</a></p>
+                            }
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- //form -->
+        <!-- copyright-->
+        <div class="copyright text-center">
+            <div class="wrapper">
+                <p class="copy-footer-29">
+                    © 2020 Working Sign In. All rights reserved
+                </p>
+            </div>
+        </div>
+        <!-- //copyright-->
+    </section>
+    <!-- //form section start -->
+
+</body>
+
+</html>

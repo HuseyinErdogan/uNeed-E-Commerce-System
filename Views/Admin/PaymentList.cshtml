@@ -1,0 +1,37 @@
+﻿@using uNeed.Models.Entity
+@model List<Payment>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<table class="table table-bordered table-success">
+    <tr>
+        <th>Payment ID</th>
+        <th>Payment Type</th>
+        <th>Payment Allowed</th>
+        <th>Delete</th>
+        <th>Update</th>
+    </tr>
+    <tbody>
+        @foreach (var pay in Model)
+        {
+        <tr>
+            <th>
+                @pay.PaymentID
+            </th>
+            <td>
+                @pay.PaymentType
+            </td>
+            <td>
+                @pay.Allowed
+            </td>
+            <td> <a href="/admin/deletepayment/@pay.PaymentID" class="btn btn-danger"> DELETE </a></td>
+            <td> <a href="/admin/getPayment/@pay.PaymentID" class="btn btn-info"> UPDATE </a></td>
+        </tr>
+        }
+    </tbody>
+</table>
+<a href="/admin/newPayment" class="btn btn-success"> ADD NEW Payment </a>
+
+

@@ -1,0 +1,24 @@
+﻿@model uNeed.Models.Entity.Category
+@{
+    ViewBag.Title = "NewCategory";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+
+<form method="post" class="form-group">
+    <div>
+        <label>Category Name</label>
+        @Html.TextBoxFor(m => m.CategoryName, new { @class = "form-control" })
+        @Html.ValidationMessageFor(m => m.CategoryName, "", new { @style = "color:Red" })
+        <hr />
+        <label>Category Description</label>
+        <input type="text" name="Description" class="form-control" />
+    </div>
+    <div class="mt-2">
+        <button class="btn btn-success">Add Category</button>
+    </div>
+
+</form>
+
+
+

@@ -1,0 +1,37 @@
+﻿@using uNeed.Models.Entity
+@model List<Shipper>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<table class="table table-bordered table-success">
+    <tr>
+        <th>Shipper ID</th>
+        <th>Company Name</th>
+        <th>Phone</th>
+        <th>Delete</th>
+        <th>Update</th>
+    </tr>
+    <tbody>
+        @foreach (var shipper in Model)
+        {
+            <tr>
+                <th>
+                    @shipper.ShipperID
+                </th>
+                <td>
+                    @shipper.CompanyName
+                </td>
+                <td>
+                    @shipper.Phone
+                </td>
+                <td> <a href="/admin/deleteshipper/@shipper.ShipperID" class="btn btn-danger"> DELETE </a></td>
+                <td> <a href="/admin/getshipper/@shipper.ShipperID" class="btn btn-info"> UPDATE </a></td>
+            </tr>
+        }
+    </tbody>
+</table>
+<a href="/admin/newShipper" class="btn btn-success"> ADD NEW SHIPPER </a>
+
+

@@ -1,0 +1,26 @@
+﻿@model uNeed.Models.Entity.Payment
+@{
+    ViewBag.Title = "NewPayment";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+
+<form method="post" class="form-group">
+    <div>
+        <label>Payment Type</label>
+        @Html.TextBoxFor(m => m.PaymentType, new { @class = "form-control" })
+        @Html.ValidationMessageFor(m => m.PaymentType, "", new { @style = "color:Red" })
+        <hr />
+        <label>Allowed</label>
+        <select class="selectpicker remove-example" name="Allowed" id="Allowed">
+            <option selected value="True">Yes</option>
+            <option value="False">No</option>
+        </select>
+
+    </div>
+    <div class="mt-2">
+        <button class="btn btn-success">Add Payment</button>
+    </div>
+
+</form>
+
